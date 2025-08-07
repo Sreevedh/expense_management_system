@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 import requests
 
-api_url = "http://localhost:8000"
+api_url = "http://expense_backend_service:8000"
 
 def add_update():
     selected_date = st.date_input("Enter Date:",datetime(2024, 8, 1), label_visibility="collapsed")

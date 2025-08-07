@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 
-api_url = "http://localhost:8000"
+api_url = "http://expense_backend_service:8000"
 
 def analytics_month():
     response = requests.get(f"{api_url}/analytics_month")

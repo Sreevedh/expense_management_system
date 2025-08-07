@@ -7,7 +7,8 @@ logger = setup('db_helper', 'server.log')
 @contextmanager
 def get_db_cursor(commit = False):
     connection = mysql.connector.connect(
-        host = "localhost",
+        host = "sql-backend",
+        port=3306,
         user = "root",
         password = "root",
         database = "expense_manager"
@@ -26,7 +27,9 @@ def get_db_cursor(commit = False):
 def fetch_expenses_for_date(expense_date):
     logger.info(f"fetch_expense_called with expense_date: {expense_date}")
     with get_db_cursor() as cursor:
+        print("inside the context manager")
         cursor.execute("SELECT * FROM expenses where expense_date=%s",(expense_date,))
+        # cursor.execute("SELECT * FROM expenses")
         expenses = cursor.fetchall()
         return expenses
     

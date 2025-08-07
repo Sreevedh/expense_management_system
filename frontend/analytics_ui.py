@@ -3,7 +3,7 @@ from datetime import datetime
 import requests
 import pandas as pd
 
-api_url = "http://localhost:8000"
+api_url = "http://expense_backend_service:8000"
 
 def analytics():
     col1, col2 = st.columns(2)
